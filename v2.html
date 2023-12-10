@@ -1,132 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We weren't lying, it's here</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-image: url('bgimg.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: auto;
-            padding: 0;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-
-        .header {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .title {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
-        .subheader {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto; /* Updated margin to 'auto' to horizontally center the container */
-            padding: 20px;
-        }
-
-        .row {
-        display: flex;
-        width: 100%;
-        position: relative;
-        }
-
-        .cell {
-            flex: 0 0 25%; /* Each cell takes up 25% width of the row */
-            padding: 15px 20px;
-            text-align: center;
-            font-size: 1.1em;
-            min-height: 50px; /* Minimum height for cells */
-            background-color: #e3f2fd;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            word-break: break-word; /* Ensures text breaks to prevent widening */
-        }
-    
-        .genre-header, .artist {
-            background-color: #bbdefb;
-        }
-    
-        .invisible {
-            visibility: hidden;
-        }
-    
-        .song-cell {
-            cursor: pointer;
-        }
-
-        .correct {
-            background-color: #c8e6c9; /* Green background for correct answers */
-        }
-        .incorrect {
-            background-color: #ffcdd2; /* Red background for incorrect answers */
-        }
-
-        /* Tic-tac-toe lines */
-        .row:not(:last-child) .cell::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: #333;
-        }
-
-        .cell:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: -10px;
-            width: 1px;
-            background-color: #333;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-            }
-
-            .title, .subheader {
-                font-size: 1.5em;
-            }
-
-            .cell {
-                padding: 10px 15px;
-                font-size: 0.9em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="header">
         <div class="title">musicgrid.io</div>
@@ -144,23 +26,32 @@
 
         <div class="row">
             <div class="cell genre-header">Charted above 5 in Billboard 100</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Anti-Hero', 'Taylor Swift', 'Top 5 Hit')">Click to guess</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Thunder', 'Imagine Dragons', 'Top 5 Hit')">Click to guess</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Gold Digger', 'Kanye', 'Top 5 Hit')">Click to guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Anti-Hero', 'Taylor Swift', 'Top 5 Hit')">Click to
+                guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Thunder', 'Imagine Dragons', 'Top 5 Hit')">Click to
+                guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Gold Digger', 'Kanye', 'Top 5 Hit')">Click to guess
+            </div>
         </div>
 
         <div class="row">
             <div class="cell genre-header">Released 2008 - 2012</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Love Story', 'Taylor Swift', '2008 Release')">Click to guess</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Radioactive', 'Imagine Dragons', '2008 Release')">Click to guess</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Heartless', 'Kanye', '2008 Release')">Click to guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Love Story', 'Taylor Swift', '2008 Release')">Click to
+                guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Radioactive', 'Imagine Dragons', '2008 Release')">
+                Click to guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Heartless', 'Kanye', '2008 Release')">Click to guess
+            </div>
         </div>
 
         <div class="row">
             <div class="cell genre-header">Feat. Kendrick Lamar</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Bad Blood', 'Taylor Swift', 'Feat. Kendrick')">Click to guess</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'Radioactive', 'Imagine Dragons', 'Feat. Kendrick')">Click to guess</div>
-            <div class="cell song-cell" onclick="guessSong(this, 'No More Parties in LA', 'Kanye', 'Feat. Kendrick')">Click to guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Bad Blood', 'Taylor Swift', 'Feat. Kendrick')">Click
+                to guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'Radioactive', 'Imagine Dragons', 'Feat. Kendrick')">
+                Click to guess</div>
+            <div class="cell song-cell" onclick="guessSong(this, 'No More Parties in LA', 'Kanye', 'Feat. Kendrick')">
+                Click to guess</div>
         </div>
     </div>
 
@@ -168,12 +59,12 @@
         async function searchSpotify() {
             const guess = document.getElementById('guessInput').value;
             const resultsContainer = document.getElementById('searchResults');
-            
+
             // Call the function to search Spotify API
             const results = await searchSongs(guess);
-            
+
             // Display the results
-            resultsContainer.innerHTML = results.map(song => 
+            resultsContainer.innerHTML = results.map(song =>
                 `<div>${song.name} by ${song.artists.join(', ')}</div>`
             ).join('');
         }
@@ -201,12 +92,12 @@
         function guessSong(cell, correctAnswer, artist, genre) {
             const promptMessage = `Guess the song by ${artist} in the genre '${genre}'.\nType your guess or cancel to skip:`;
             const userGuess = prompt(promptMessage);
-    
+
             if (userGuess === null) {
                 // User cancelled the guess
                 return;
             }
-    
+
             if (userGuess.toLowerCase() === correctAnswer.toLowerCase()) {
                 cell.classList.add('correct');
                 cell.textContent = 'Correct!';
@@ -217,4 +108,5 @@
         }
     </script>
 </body>
+
 </html>
